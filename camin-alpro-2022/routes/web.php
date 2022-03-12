@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CaminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return "Testing routing";
+});
+
+Route::get('/camin', [CaminController::class, "index"]);
+
+Route::get('/camin/1', [CaminController::class, "show1"]);
+
+Route::get('/camin/2', [CaminController::class, "show2"]);
+
+Route::get('/camin/3', [CaminController::class, "show3"]);
+
+Route::get('/camin/4', [CaminController::class, "show4"]);
